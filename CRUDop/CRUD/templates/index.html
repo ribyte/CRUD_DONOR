@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<body>
+    <title>Electric Bill generator</title>
+</body>
+<body>
+    <center>
+    <center>Electric bill generator</center>
+    <hr/>
+    <table border="1">
+        <tr>
+            <th>cusid</th>
+            <th>name</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>watt used</th>
+        </tr>
+        {% for result in data %}
+        <tr>
+            <td>{{result.c_id}}</td>
+            <td>{{result.c_name}}</td>
+            <td>{{result.email}}</td>
+            <td>{{result.gender}}</td>
+            <td>{{result.watt_used}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
