@@ -9,7 +9,7 @@
     <a href="{%url 'insertcustomer' %}">create new customer</a>
     <table border="1">
         <tr>
-            <th>cusid</th>
+            <th>cid</th>
             <th>name</th>
             <th>email</th>
             <th>gender</th>
@@ -17,7 +17,7 @@
         </tr>
         {% for result in data %}
         <tr>
-            <td>{{result.c_id}}</td>
+            <td>{{results.c_id}}</td>
             <td>{{result.c_name}}</td>
             <td>{{result.email}}</td>
             <td>{{result.gender}}</td>
