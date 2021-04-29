@@ -15,7 +15,7 @@ def insertcustomer(request):
             saverecord.gender=request.POST.get('gender')
             saverecord.watt_used=request.POST.get('watt_used')
             saverecord.save()
-            messages.sucess(request,'Customer '+saverecord.c_name+' is saved sucessfully')
+            messages.success(request,'Customer '+saverecord.c_name+' is saved sucessfully')
             return render(request,'insert.html')
     
     else:

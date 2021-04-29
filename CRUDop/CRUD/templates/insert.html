@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<body>
+    <title>Insert Record</title>
+</body>
+<body>
+    <center>
+    <center>Electric bill generator</center>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+    <table border="1">
+        <tr>
+            <td>Customer name</td>
+            <td><input type="text" placeholder="Enter customer name" name="c_name"></td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td><input type="text" placeholder="enter email" name="email"></td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td><input type="radio" name="gender" value="M">Male | <input type="radio" name="gender" value="F">Female | <input type="radio" name="gender" value="O">Other</td>
+        </tr>
+        <tr>
+            <td>watt_used</td>
+            <td><input type="float" name="watt_used" placeholder="Enter total watt used"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Insert"></td>
+            <td>
+                {% if messages %}
+    {% for mess in messages %}
+    <b style="color: blue;">{{mess}}</b>
+    {% endfor %}
+    {% endif %}
+            </td>
+        </tr>
+    </table>
+    
+</form>
+</center>
+</body>
+</html>

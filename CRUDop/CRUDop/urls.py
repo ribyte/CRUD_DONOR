@@ -20,5 +20,5 @@ from CRUD import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.showcustomer,name="showcustomer"),
-    path('insert',views.insertcustomer,name="Insertcustomer")
+    path('insert',views.insertcustomer,name="insertcustomer")
 ]
