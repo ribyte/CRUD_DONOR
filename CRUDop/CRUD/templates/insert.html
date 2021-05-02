@@ -10,6 +10,10 @@
         {% csrf_token %}
     <table border="1">
         <tr>
+            <td>Customer ID</td>
+            <td><input type="int" placeholder="Enter customer id" name="c_id"></td>
+        </tr>
+        <tr>
             <td>Customer name</td>
             <td><input type="text" placeholder="Enter customer name" name="c_name"></td>
         </tr>
@@ -36,7 +40,7 @@
             </td>
         </tr>
     </table>
-    
+    <a href="{%url 'showcustomer' %}">Homepage</a>   
 </form>
 </center>
 </body>

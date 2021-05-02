@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<body>
+    <title>Electric Bill generator</title>
+</body>
+<body>
+    <center>
+    <hr/>
+    <form method="POST" action="updatecus/{{billmodel.c_id}}">
+    {% csrf_token %}
+    <table border="1">
+        <tr>
+            <td>Customer ID</td>
+            <td><input type="text" name="id" value="{{billmodel.c_id}}" readonly></td>
+        </tr>
+        <tr>
+            <td>Customer name</td>
+            <td><input type="text" name="Customer name" value="{{billmodel.c_name}}"></td>
+        </tr>
+        <tr>
+            <td>Customer email</td>
+            <td><input type="text" name="Customer email" value="{{billmodel.email}}"></td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td><input type="char" name="Gender" value="{{billmodel.gender}}"></td>
+        </tr>
+        <tr>
+            <td>watt used</td>
+            <td><input type="text" name="Customer name" value="{{billmodel.watt_used}}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="update"></td>
+            <td>
+                {% if messages %}
+                {% for mess in messages %}
+                <b style="color: blue;">{{mess}}</b>
+                {% endfor %}
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <a href="{%url 'showcustomer' %}">Homepage</a> 
+</form>
+</center>
+</body>
+</html>

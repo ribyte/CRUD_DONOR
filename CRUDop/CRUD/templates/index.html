@@ -17,11 +17,13 @@
         </tr>
         {% for result in data %}
         <tr>
-            <td>{{results.c_id}}</td>
+            <td>{{result.c_id}}</td>
             <td>{{result.c_name}}</td>
             <td>{{result.email}}</td>
             <td>{{result.gender}}</td>
             <td>{{result.watt_used}}</td>
+            <td><a href="edit/{{result.c_id}}/">Edit</a></td>
+            <td><a href="delete/{{result.c_id}}" onclick="return confirmation('Sure to delete the record?')">Delete</a></td>
         </tr>
         {% endfor %}
     </table>

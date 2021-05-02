@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from .models import billmodel
+from CRUD.forms import forms
 
 def showcustomer(request):
     showall=billmodel.objects.all()
@@ -21,3 +22,24 @@ def insertcustomer(request):
     
     else:
         return render(request,'insert.html')
+    
+    
+
+def editcus(request, c_id):
+    editcusobj=billmodel.objects.get(c_id=c_id)
+    return render(request, 'edit.html',{"billmodel":editcusobj})
+
+def updatecus(request,c_id):
+    Updatecus=billmodel.objects.get(c_id=c_id)
+    form=cusforms(request.POST,instance=Updatecus)
+    if form.is_valid():
+        form.save()
+        messages.success(request, "request updated")
+        return render(request, 'edit.html',{"billmodel":Updatecus})
+
+
+def delcus(request,c_id):
+    delcus=billmodel.objects.get(c_id=c_id)
+    delcus.delete()
+    showdata=billmodel.objects.all()
+    return render(request, "index.html",{"billmodel":showdata})
