@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.showcustomer,name="showcustomer"),
     path('insert',views.insertcustomer,name="insertcustomer"),
-    path('edit/<int:c_id>/',views.editcus,name="editcus"),
-    path('update/<int:c_id>/',views.updatecus,name="updatecus"),
-    path('delete/<int:c_id>/',views.delcus,name="delcus")
+    path('edit/<int:donor_id>/',views.editcus,name="editcus"),
+    path('update/<int:donor_id>/',views.updatecus,name="updatecus"),
+    path('delete/<int:donor_id>/',views.delcus,name="delcus")
 ]

@@ -1,34 +1,34 @@
 {% load static %}
 <!DOCTYPE html>
 <body>
-    <title>Electric Bill generator</title>
+    <title>Blood Donor Data Store</title>
 </body>
 <body>
     <center>
-    <center>Electric bill generator</center>
+    <center>Blood Donor Data Store</center>
     <hr/>
-    <a href="{%url 'insertcustomer' %}">create new customer</a>
+    <a href="{%url 'insertcustomer' %}">new donor data</a>
     <table border="1">
         <tr>
-            <th>cid</th>
-            <th>name</th>
-            <th>email</th>
-            <th>job</th>
+            <th>Donorid</th>
+            <th>DOnor name</th>
+            <th>Donor email</th>
+            <th>blood group</th>
             <th>gender</th>
-            <th>watt used</th>
-            <th>Previous payment</th>
+            <th>Amount donated</th>
+            <th>Previously donated</th>
         </tr>
         {% for result in data %}
         <tr>
-            <td>{{result.c_id}}</td>
+            <td>{{result.donor_id}}</td>
             <td>{{result.c_name}}</td>
             <td>{{result.email}}</td>
-            <td>{{result.job}}</td>
+            <td>{{result.blood_group}}</td>
             <td>{{result.gender}}</td>
-            <td>{{result.watt_used}}</td>
-            <td>{{result.payment}}</td>
-            <td><a href="edit/{{result.c_id}}/">Edit</a></td>
-            <td><a href="delete/{{result.c_id}}">Delete</a></td>
+            <td>{{result.donated_amount}}</td>
+            <td>{{result.prev_donated}}</td>
+            <td><a href="edit/{{result.donor_id}}/">Edit</a></td>
+            <td><a href="delete/{{result.donor_id}}">Delete</a></td>
         </tr>
         {% endfor %}
     </table>

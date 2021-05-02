@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <body>
-    <title>Electric Bill generator</title>
+    <title>Blood Donor Data Store</title>
 </body>
 <body>
     <center>
     <hr/>
-    <form method="POST" action="update/{{billmodel.c_id}}">
+    <form method="POST" action="update/{{billmodel.donor_id}}">
     {% csrf_token %}
     <table border="1">
         <tr>
-            <td>Customer ID</td>
-            <td><input type="text" name="id" value="{{billmodel.c_id}}" readonly></td>
+            <td>Donor ID</td>
+            <td><input type="text" name="Donor" value="{{billmodel.donor_id}}" readonly></td>
         </tr>
         <tr>
-            <td>Customer name</td>
-            <td><input type="text" name="Customer name" value="{{billmodel.c_name}}"></td>
+            <td>Donor name</td>
+            <td><input type="text" name="Donor name" value="{{billmodel.donor_name}}"></td>
         </tr>
         <tr>
-            <td>Customer email</td>
-            <td><input type="text" name="Customer email" value="{{billmodel.email}}"></td>
+            <td>Donor email</td>
+            <td><input type="text" name="Donor email" value="{{billmodel.email}}"></td>
         </tr>
         <tr>
             <td>gender</td>
             <td><input type="char" name="Gender" value="{{billmodel.gender}}"></td>
         </tr>
         <tr>
-            <td>watt used</td>
-            <td><input type="text" name="Customer name" value="{{billmodel.watt_used}}"></td>
+            <td>Donated Amount</td>
+            <td><input type="text" name="Amount" value="{{billmodel.donated_amount}}"></td>
         </tr>
         <tr>
-            <td>previous payment</td>
-            <td><input type="text" name="payment" value="{{billmodel.payment}}"></td>
+            <td>previously donated</td>
+            <td><input type="text" name="previously donated" value="{{billmodel.prev_donated}}"></td>
         </tr>
         <tr>
             <td><input type="submit" value="update"></td>

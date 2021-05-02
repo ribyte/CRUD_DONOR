@@ -12,56 +12,40 @@ def showcustomer(request):
 
 def insertcustomer(request):
     if request.method == "POST":
-        if request.POST.get('c_id') and request.POST.get('c_name') and request.POST.get('email') and request.POST.get('job') and request.POST.get('gender') and request.POST.get('watt_used') and request.POST.get('payment'):
+        if request.POST.get('donor_id') and request.POST.get('donor_name') and request.POST.get('email') and request.POST.get('blood_group') and request.POST.get('gender') and request.POST.get('donated_amount') and request.POST.get('prev_donated'):
             saverecord = billmodel()
-            saverecord.c_id = request.POST.get('c_id')
-            saverecord.c_name = request.POST.get('c_name')
+            saverecord.donor_id = request.POST.get('donor_id')
+            saverecord.donor_name = request.POST.get('donor_name')
             saverecord.email = request.POST.get('email')
-            saverecord.job = request.POST.get('job')
+            saverecord.blood_group = request.POST.get('blood_group')
             saverecord.gender = request.POST.get('gender')
-            saverecord.watt_used = request.POST.get('watt_used')
-            saverecord.payment = request.POST.get('payment')
+            saverecord.donated_amount = request.POST.get('donated_amount')
+            saverecord.prev_donated = request.POST.get('prev_donated')
             saverecord.save()
-            messages.success(request, 'Customer ' +
-                             saverecord.c_name+' is saved sucessfully')
+            messages.success(request, 'Donor ' +
+                             saverecord.donor_name+' is saved sucessfully')
             return render(request, 'insert.html')
 
     else:
         return render(request, 'insert.html')
 
-
-# def editcus(request, c_id):
-#     editcusobj = billmodel.objects.get(c_id=c_id)
-#     return render(request, 'edit.html', {"billmodel": editcusobj})
-
-
-# def updatecus(request, c_id):
-#     Updatecus = billmodel.objects.get(c_id=c_id)
-#     form = cusforms(request.POST, instance=Updatecus)
-#     if form.is_valid():
-#         form.save()
-#         messages.success(request, 'request updated')
-#         return render(request, 'edit.html', {"billmodel": Updatecus})
-#     else:
-#         raise Http404
-
-def editcus(request, c_id):
-    editcusobj = billmodel.objects.get(c_id=c_id)
+def editcus(request, donor_id):
+    editcusobj = billmodel.objects.get(donor_id=donor_id)
     return render(request, 'edit.html', {"billmodel": editcusobj})
 
 
-def updatecus(request,c_id):
-    Updatecus = billmodel.objects.get(c_id=c_id)
+def updatecus(request,donor_id):
+    Updatecus = billmodel.objects.get(donor_id=donor_id)
     form = cusforms(request.POST, instance=Updatecus)
     if form.is_valid():
         form.save()
         messages.success(request, 'Record Updated')
         return render(request, 'edit.html', {"billmodel": Updatecus})
     else:
-        editcus(request, c_id)
+        editcus(request, donor_id)
 
-def delcus(request, c_id):
-    delcus = billmodel.objects.get(c_id=c_id)
+def delcus(request, donor_id):
+    delcus = billmodel.objects.get(donor_id=donor_id)
     delcus.delete()
     showdata = billmodel.objects.all()
     print(showdata)
