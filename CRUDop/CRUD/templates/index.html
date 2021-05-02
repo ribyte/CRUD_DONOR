@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <body>
     <title>Electric Bill generator</title>
@@ -12,18 +13,22 @@
             <th>cid</th>
             <th>name</th>
             <th>email</th>
+            <th>job</th>
             <th>gender</th>
             <th>watt used</th>
+            <th>Previous payment</th>
         </tr>
         {% for result in data %}
         <tr>
             <td>{{result.c_id}}</td>
             <td>{{result.c_name}}</td>
             <td>{{result.email}}</td>
+            <td>{{result.job}}</td>
             <td>{{result.gender}}</td>
             <td>{{result.watt_used}}</td>
+            <td>{{result.payment}}</td>
             <td><a href="edit/{{result.c_id}}/">Edit</a></td>
-            <td><a href="delete/{{result.c_id}}" onclick="return confirmation('Sure to delete the record?')">Delete</a></td>
+            <td><a href="delete/{{result.c_id}}">Delete</a></td>
         </tr>
         {% endfor %}
     </table>

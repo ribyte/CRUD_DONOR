@@ -22,12 +22,29 @@
             <td><input type="text" placeholder="enter email" name="email"></td>
         </tr>
         <tr>
+            <td>
+                Job
+            </td>
+            <td>
+                <input type="checkbox" name="job" value="private">Private<br>
+                <input type="checkbox" name="job" value="public">Public<br>
+                <input type="checkbox" name="job" value="business">Business
+            </td>
+        </tr>
+        <tr>
             <td>gender</td>
             <td><input type="radio" name="gender" value="M">Male | <input type="radio" name="gender" value="F">Female | <input type="radio" name="gender" value="O">Other</td>
         </tr>
         <tr>
             <td>watt_used</td>
             <td><input type="float" name="watt_used" placeholder="Enter total watt used"></td>
+        </tr>
+        <tr>
+            <td>Previous bill paid? </td>
+            <td>
+                <input type="radio" name="payment" value="True">Yes <br>
+                <input type="radio" name="payment" value="False">No <br>
+            </td>
         </tr>
         <tr>
             <td><input type="submit" value="Insert"></td>
